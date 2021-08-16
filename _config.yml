@@ -21,10 +21,10 @@
 title: projects | muskeg.dev 
 email: the.small.swamp@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  let's show off a little. What's your job raph? Man I don't know, I always
+  What is it that you do with your life raph? Man, I don't know, I always
   work on so many different things. Not sysadmin, not devops, not developper
   but doing all that? Anyway, have a look at what I did, maybe you can
-  define I better than me!
+  define it better than me!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: smallswamp
