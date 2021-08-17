@@ -1,0 +1,23 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+.site-header {
+    background-color: rgba(28 ,46 ,53 , 0.975);
+}
+
+.site-title {
+    color: #f3f3f3 !important;
+}
+
+.page-link {
+    color: #f3f3f3 !important;
+}
+
+@include media-query($on-palm) {
+    .page-link {
+        color: $text-color !important;
+    }
+}
