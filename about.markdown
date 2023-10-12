@@ -4,15 +4,14 @@ title: about
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hi there. I'm Raphael Lanouette. I'm a sysadmin/developer/devops.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Sometimes I pretend I'm an artist. I'm also a father, a music lover and somewhat of a gamer.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Here's a list of places where you can find me:
+* [BeatJuice Twitter](https://twitter.com/BeatJuiceStream)
+* [Personal Twitter](https://twitter.com/smallswamp)
+* [GitHub](https://github.com/muskeg)
+* [Twitch](https://twitch.tv/muskegg)
+* [BeatJuice DMCA Free Music](https://beatjuice.stream/)
+* [Frets On Fire Fan Forums](https://www.fretsonfire.org/forums/)

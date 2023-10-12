@@ -16,17 +16,20 @@ I love markdown and thought it would be great to stop thinking about the infra f
 
 ## Jekyll
 
-After comparing multiple headless CMS and SSG I decided to go with Jekyll. It seemed lightweight and the latest versions seemed to build sites quickly. I do not expect this site to be that big and complex which made build times a minor factor. 
+After comparing multiple headless CMS and SSG I decided to go with Jekyll. It seemed lightweight and the latest versions seemed to build sites quickly. I do not expect this site to be that big and complex which made build times a minor factor.
 
 I really liked the blog-oriented setup and its Minima theme seemed like a really good starting point, needing very little theming to integrate to the existing website. And after playing with it for a couple days now I'm happy with my choice.
 
 I started by setting up my repo on GitHub: [https://github.com/muskeg/blog](https://github.com/muskeg/blog). The repo is public, feel free to have a look.
 
 From there it's easy to get started. Install ruby and dependencies:
+
 ```bash
 sudo apt-get install ruby-full build-essential zlib1g-dev
 ```
+
 And to install gems for my current user only:
+
 ```bash
 mkdir ~/gems
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
@@ -34,17 +37,21 @@ echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
 echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
+
 And then get the Jekyll and Bundler gems
+
 ```bash
 gem install jekyll bundler
 ```
 
 With Jekyll installed, I went to my repo folder and just created the blog:
+
 ```bash
 jekyll new blog
 cd blog
 bundle exec jekyll serve
 ```
+
 And voilà. You're watching at the result right now!
 
 ## Netlify
@@ -53,114 +60,18 @@ At first I wanted to simply use GitHub Pages to deploy the site. This would be t
 
 ### Faster (better) deployments
 
-The biggest factor for me was the speed at which Netlify deploys your site. I waited between 10 and 20 times longer on GitHub before seeing my website published on a few occasions. I can understand why GitHub works that way and of course I won't be publishing my website that often but I admit it made the first deploys more annoying. 
+The biggest factor for me was the speed at which Netlify deploys your site. I waited between 10 and 20 times longer on GitHub before seeing my website published on a few occasions. I can understand why GitHub works that way and of course I won't be publishing my website that often but I admit it made the first deploys more annoying.
 
 Netlify also gives you full deploy logs straight from the web console:
-<details>
-<summary>Logs example</summary>
-<p>
 
 {% highlight log %}
 12:26:48 AM: Build ready to start
 12:26:50 AM: build-image version: c6001ed68662a13e5deb24abec2b46058c58248a
 12:26:50 AM: build-image tag: v3.9.0
 12:26:50 AM: buildbot version: e6b727854930d4a8dd70f1228e63b3eb6425ad1a
-12:26:50 AM: Fetching cached dependencies
-12:26:50 AM: Starting to download cache of 100.3MB
-12:26:52 AM: Finished downloading cache in 1.936005472s
-12:26:52 AM: Starting to extract cache
-12:26:55 AM: Finished extracting cache in 3.030350835s
-12:26:55 AM: Finished fetching cache in 4.992901942s
-12:26:55 AM: Starting to prepare the repo for build
-12:26:56 AM: Preparing Git Reference refs/heads/main
-12:26:56 AM: Parsing package.json dependencies
-12:26:57 AM: Starting build script
-12:26:57 AM: Installing dependencies
-12:26:57 AM: Python version set to 2.7
-12:26:57 AM: Started restoring cached node version
-12:27:00 AM: Finished restoring cached node version
-12:27:01 AM: v12.18.0 is already installed.
-12:27:01 AM: Now using node v12.18.0 (npm v6.14.4)
-12:27:01 AM: Started restoring cached build plugins
-12:27:01 AM: Finished restoring cached build plugins
-12:27:02 AM: Attempting ruby version 2.7.2, read from environment
-12:27:03 AM: Using ruby version 2.7.2
-12:27:03 AM: Using bundler version 2.2.25 from Gemfile.lock
-12:27:04 AM: Using PHP version 5.6
-12:27:04 AM: Started restoring cached ruby gems
-12:27:04 AM: Finished restoring cached ruby gems
-12:27:04 AM: Started restoring cached go cache
-12:27:04 AM: Finished restoring cached go cache
-12:27:04 AM: go version go1.14.4 linux/amd64
-12:27:04 AM: go version go1.14.4 linux/amd64
-12:27:04 AM: Installing missing commands
-12:27:04 AM: Verify run directory
-12:27:04 AM: ​
-12:27:04 AM: ────────────────────────────────────────────────────────────────
-12:27:04 AM:   Netlify Build                                                 
-12:27:04 AM: ────────────────────────────────────────────────────────────────
-12:27:04 AM: ​
-12:27:04 AM: ❯ Version
-12:27:04 AM:   @netlify/build 18.2.9
-12:27:04 AM: ​
-12:27:04 AM: ❯ Flags
-12:27:04 AM:   baseRelDir: true
-12:27:04 AM:   deployId: 611b3a88d46f2e000782cb44
-12:27:04 AM: ​
-12:27:04 AM: ❯ Current directory
-12:27:04 AM:   /opt/build/repo
-12:27:04 AM: ​
-12:27:04 AM: ❯ Config file
-12:27:04 AM:   No config file was defined: using default values.
-12:27:04 AM: ​
-12:27:04 AM: ❯ Context
-12:27:04 AM:   production
-12:27:04 AM: ​
-12:27:04 AM: ────────────────────────────────────────────────────────────────
-12:27:04 AM:   1. Build command from Netlify app                             
-12:27:04 AM: ────────────────────────────────────────────────────────────────
-12:27:04 AM: ​
-12:27:04 AM: $ bundle exec jekyll build
-12:27:05 AM: Configuration file: /opt/build/repo/_config.yml
-12:27:05 AM:             Source: /opt/build/repo
-12:27:05 AM:        Destination: /opt/build/repo/_site
-12:27:05 AM:  Incremental build: disabled. Enable with --incremental
-12:27:05 AM:       Generating...
-12:27:06 AM:        Jekyll Feed: Generating feed for posts
-12:27:06 AM:                     done in 0.43 seconds.
-12:27:06 AM:  Auto-regeneration: disabled. Use --watch to enable.
-12:27:06 AM: ​
-12:27:06 AM: (build.command completed in 1.4s)
-12:27:06 AM: ​
-12:27:06 AM: ────────────────────────────────────────────────────────────────
-12:27:06 AM:   2. Deploy site                                                
-12:27:06 AM: ────────────────────────────────────────────────────────────────
-12:27:06 AM: ​
-12:27:06 AM: Starting to deploy site from '_site'
-12:27:06 AM: Creating deploy tree 
-12:27:06 AM: Creating deploy upload records
-12:27:06 AM: 1 new files to upload
-12:27:06 AM: 0 new functions to upload
-12:27:06 AM: Site deploy was successfully initiated
-12:27:06 AM: ​
-12:27:06 AM: (Deploy site completed in 292ms)
-12:27:06 AM: ​
-12:27:06 AM: ────────────────────────────────────────────────────────────────
-12:27:06 AM:   Netlify Build Complete                                        
-12:27:06 AM: ────────────────────────────────────────────────────────────────
-12:27:06 AM: ​
-12:27:06 AM: (Netlify Build completed in 1.7s)
-12:27:06 AM: Starting post processing
-12:27:06 AM: Post processing - HTML
-12:27:06 AM: Post processing - header rules
-12:27:06 AM: Post processing - redirect rules
-12:27:06 AM: Post processing done
-12:27:07 AM: Caching artifacts
-12:27:07 AM: Started saving ruby gems
-12:27:07 AM: Finished saving ruby gems
-12:27:07 AM: Started saving build plugins
-12:27:07 AM: Finished saving build plugins
-12:27:07 AM: Started saving pip cache
+
+...snip...
+
 12:27:07 AM: Site is live ✨
 12:27:07 AM: Finished saving pip cache
 12:27:07 AM: Started saving emacs cask dependencies
