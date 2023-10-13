@@ -71,3 +71,4 @@ And the email I send are also delivered properly
 
 ![Custom address mail delivery](/assets/img/2023-10-12-routed-emails/email-delivery.png)
 
+As expected, the email shows as being sent `via gmail.com` (which is both true and fair, considering we're leveraging a free service.)
