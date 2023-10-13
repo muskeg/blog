@@ -3,6 +3,7 @@ layout: post
 title:  "Moving to Jekyll!"
 date:   2021-08-16 10:49:47 -0400
 categories: jekyll blog
+published: false
 ---
 I originally planned to setup a blog module on the main Django app running [muskeg.dev](https://muskeg.dev). It felt like a good idea to build something from scratch, showcasing web dev skills. Including both design and db work.
 
